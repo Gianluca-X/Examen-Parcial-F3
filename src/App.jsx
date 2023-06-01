@@ -44,7 +44,13 @@ function App({}) {
           onChange={e=>setModelo(e.target.value)}/>
           <button type="submit" >Añadir</button>
         </form>
-        {error ? <Card marca={marca} modelo={modelo}/> : <h4 className='error'>Por favor chequea que la información sea correcta</h4>}
+        {error !== null ? (
+          error ? (
+            <Card marca={marca} modelo={modelo} />
+          ) : (
+            <h4 className='error'>Por favor, verifica que la información sea correcta</h4>
+          )
+        ) : null}
       </div>
     </>
   )
